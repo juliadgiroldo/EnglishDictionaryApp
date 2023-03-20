@@ -100,14 +100,22 @@
           <h1 id="sh2" >Search Results</h1> <br>
           <h2 id="fh2">Meaning: {{ meaning }}</h2> <br>
 
-          <h2 id="fh2">Synonyms: {% for synonym in synonyms %}
-                                {{ synonyms }},
-                                {% endfor %}
+          <h2 id="fh2">Synonyms:{%if synonyms%}
+                                  {% for synonym in synonyms %}
+                                    {{ synonyms }},
+                                  {% endfor %}
+                                {% else %}
+                                  This word has no synonyms
+                                {% endif %}
           </h2> <br>
 
-          <h2 id="fh2">Antonyms: {% for antonym in antonyms %}
-                                  {{ antonyms }}, 
+          <h2 id="fh2">Antonyms:{% if antonyms %}
+                                  {% for antonym in antonyms %}
+                                    {{ antonyms }}, 
                                   {% endfor %}
+                                {% else %}
+                                  This word has no antonyms
+                                {% endif %}
           </h2> <br>
 
     </div>
